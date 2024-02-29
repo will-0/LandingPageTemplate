@@ -22,7 +22,7 @@ export const useForm = (validate: any) => {
     event.preventDefault();
     setErrors(validate(values));
     // Your url for API
-    const url = "";
+    const url = "http://127.0.0.1:5000/submit";
     if (Object.values(values).every((x) => x !== "")) {
       axios
         .post(url, {
@@ -36,7 +36,7 @@ export const useForm = (validate: any) => {
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && shouldSubmit) {
-      setValues((values) => (values = { name: "", email: "", message: "" }));
+      setValues((values) => ({ name: "", email: "", message: "" }));
       openNotificationWithIcon();
     }
   }, [errors, shouldSubmit]);

@@ -1,0 +1,13 @@
+{
+  "title": "My Landing Page",
+  "text": "Easily create a landing page here",
+  "button": [
+    {
+      "title": "Explore"
+    },
+    {
+      "title": "Learn more",
+      "color": "#fff"
+    }
+  ]
+}
