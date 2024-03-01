@@ -34,12 +34,11 @@ const ContentBlock = ({
   };
 
   return (
-    <ContentSection>
+    <ContentSection id={id}>
       <Fade direction={direction} triggerOnce>
         <StyledRow
           justify="space-between"
           align="middle"
-          id={id}
           direction={direction}
         >
           <Col lg={11} md={11} sm={12} xs={24}>
@@ -56,15 +55,16 @@ const ContentBlock = ({
                       (
                         item: {
                           color?: string;
+                          scrollto?: string;
                           title: string;
                         },
-                        id: number
+                        id: number,
                       ) => {
                         return (
                           <Button
                             key={id}
                             color={item.color}
-                            onClick={() => scrollTo("about")}
+                            onClick={() => scrollTo(item.scrollto ? item.scrollto : "about")}
                           >
                             {t(item.title)}
                           </Button>
